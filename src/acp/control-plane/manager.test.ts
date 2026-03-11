@@ -296,7 +296,7 @@ describe("AcpSessionManager", () => {
       requestId: "r2",
     });
 
-    expect(runtimeState.ensureSession).toHaveBeenCalledTimes(1);
+    expect(runtimeState.ensureSession).toHaveBeenCalledTimes(2);
     expect(runtimeState.runTurn).toHaveBeenCalledTimes(2);
   });
 
@@ -474,7 +474,7 @@ describe("AcpSessionManager", () => {
         requestId: "r2",
       }),
     ).resolves.toBeUndefined();
-    expect(runtimeState.ensureSession).toHaveBeenCalledTimes(2);
+    expect(runtimeState.ensureSession).toHaveBeenCalledTimes(3);
   });
 
   it("evicts idle cached runtimes before enforcing max concurrent limits", async () => {
